@@ -61,49 +61,6 @@ ifeq ($(N_PLATFORM),__MACOSX__)
 endif
 
 #---------------------------------------------------------------------
-# N_USE_STLPORT
-# Define whether or not STLPort should be used on Linux and Mac OS X
-# platforms.  This should be enabled for gcc 2.9x and disabled for
-# gcc 3.x (as gcc 3.x has a suitable STL implementation).
-#---------------------------------------------------------------------
-#
-ifeq ($(N_PLATFORM),__WIN32__)
-  N_USE_STLPORT = false
-endif
-ifeq ($(N_PLATFORM),__LINUX__)
-  N_USE_STLPORT = true
-endif
-
-ifeq ($(N_PLATFORM),__MACOSX__)
-  N_USE_STLPORT = false
-endif
-
-#---------------------------------------------------------------------
-# N_STLPORT_HOME
-# Defines include directory for STLport
-#---------------------------------------------------------------------
-#
-ifeq ($(N_PLATFORM),__LINUX__)
-  N_STLPORT_HOME = /usr/include/stlport
-endif
-ifeq ($(N_PLATFORM),__MACOSX__)
-  N_STLPORT_HOME = /usr/include/stlport
-endif
-
-#---------------------------------------------------------------------
-# N_STLPORT_CFLAGS
-# Defines CFLAGS to use with STLport.  If you want to use STLport's 
-# I/O streams, set the value of this flag to an empty string, although
-# you'll then need to modify each link line to include -lstlport.
-#---------------------------------------------------------------------
-ifeq ($(N_PLATFORM),__LINUX__)
-  N_STLPORT_CFLAGS = -D_STLP_NO_OWN_IOSTREAMS
-endif
-ifeq ($(N_PLATFORM),__MACOSX__)
-  N_STLPORT_CFLAGS = -D_STLP_NO_OWN_IOSTREAMS
-endif
-
-#---------------------------------------------------------------------
 # N_PYTHON_INCLUDES
 # Defines include directory for Python
 #---------------------------------------------------------------------

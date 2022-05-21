@@ -98,9 +98,6 @@ ifeq ($(N_COMPILER),__GNUC__)
   ifneq (X$(N_PYTHON_LIBS),X)
     LIBDIR += $(LPATH_OPT)$(N_PYTHON_LIBS)
   endif
-  ifeq ($(N_USE_STLPORT),true)
-    INCDIR += $(IPATH_OPT)$(N_STLPORT_HOME)
-  endif
   ifeq ($(N_PLATFORM),__LINUX__)
     LIBDIR += $(LPATH_OPT)/usr/X11R6/lib
   endif
@@ -110,9 +107,6 @@ ifeq ($(N_COMPILER),__GNUC__)
   NEB_LIBS = 
   SYS_LIBS = m
   CFLAGS += $(INCDIR) -fPIC -D$(N_PLATFORM) -W -Wall -Wno-multichar -Wno-reorder
-  ifeq ($(N_USE_STLPORT),true)
-    CFLAGS += $(N_STLPORT_CFLAGS)
-  endif
   CFLAGS += $(OSX_CFLAGS)
   ifeq ($(N_MEMMANAGER),true)
     CFLAGS += -D__NEBULA_MEM_MANAGER__

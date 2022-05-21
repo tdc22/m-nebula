@@ -10,13 +10,8 @@
 #undef _UNICODE
 #endif
 
-#ifndef NO_STLPORT
-#include "stlport/string"
-#include "stlport/vector"
-#else 
 #include <string>
 #include <vector>
-#endif
 
 #include "il/il.h"
 #include "il/ilu.h"

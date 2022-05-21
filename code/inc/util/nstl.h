@@ -1,23 +1,13 @@
 #ifndef N_STL_H
 #define N_STL_H
 
-#ifndef NO_STLPORT
-    #include "stlport/vector"
-    #include "stlport/algorithm"
-	#include "stlport/deque"
-	#include "stlport/list"
-	#include "stlport/string"
-	#include "stlport/map"
-	#include "stlport/stack"
-#else 
-    #include <vector>
-    #include <algorithm>
-	#include <deque>
-	#include <list>
-	#include <string>
-	#include <map>
-	#include <stack>
-#endif
+#include <vector>
+#include <algorithm>
+#include <deque>
+#include <list>
+#include <string>
+#include <map>
+#include <stack>
 
 #ifdef ULONG_MAX
 #define	UNSETU		ULONG_MAX

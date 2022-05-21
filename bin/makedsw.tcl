@@ -11,8 +11,8 @@
 #   (C) 2000 A.Weissflog
 #--------------------------------------------------------------------
 
-set release_cpp_flags "/nologo /vmb /vms /Gy /GF /MD /W4 /GX- /G6 /Ob2 /Og /Oi /Os /Oy /FD /c /D_NEBULA_DEVICE_ /DWIN32 /DNDEBUG /D__NEBULA_MEM_MANAGER__ /DNT_PLUGIN /I..\\inc /I..\\inc\\stlport /Tp"
-set debug_cpp_flags   "/nologo /vmb /vms /MDd /W4 /GX- /Gm /FD /ZI /Od /GZ /c /D_NEBULA_DEVICE_ /DWIN32 /D_DEBUG /D__NEBULA_MEM_MANAGER__ /DNT_PLUGIN /I..\\inc /I..\\inc\\stlport /Tp"
+set release_cpp_flags "/nologo /vmb /vms /Gy /GF /MD /W4 /GX- /G6 /Ob2 /Og /Oi /Os /Oy /FD /c /D_NEBULA_DEVICE_ /DWIN32 /DNDEBUG /D__NEBULA_MEM_MANAGER__ /DNT_PLUGIN /I..\\inc /Tp"
+set debug_cpp_flags   "/nologo /vmb /vms /MDd /W4 /GX- /Gm /FD /ZI /Od /GZ /c /D_NEBULA_DEVICE_ /DWIN32 /D_DEBUG /D__NEBULA_MEM_MANAGER__ /DNT_PLUGIN /I..\\inc /Tp"
 set release_dswlibpath "/libpath:..\\..\\bin\\win32 /libpath:..\\lib\\win32_vc_i386"
 set debug_dswlibpath "/libpath:..\\..\\bin\\win32d /libpath:..\\lib\\win32_vc_i386"
 
@@ -47,10 +47,10 @@ proc get_dirmod {name} {
     # puts "Result: $mod_list"
     return $mod_list
 }
-        
+
 #--------------------------------------------------------------------
 #   gen_package_dsp
-#   Generate dsp file for a package target definition. 
+#   Generate dsp file for a package target definition.
 #   07-Mar-00   floh    created
 #   20-Mar-00   floh    + added post build step to create
 #                         package .toc files
@@ -89,17 +89,17 @@ proc gen_package_dsp {name} {
     puts $cid "# TARGTYPE \"Win32 (x86) Dynamic-Link Library\" 0x0102"
     puts $cid ""
     puts $cid "CFG=$name - Win32 Debug"
-    puts $cid "!MESSAGE Dies ist kein gültiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
-    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und führen Sie den Befehl"
-    puts $cid "!MESSAGE" 
+    puts $cid "!MESSAGE Dies ist kein gï¿½ltiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
+    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und fï¿½hren Sie den Befehl"
+    puts $cid "!MESSAGE"
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\"."
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Sie können beim Ausführen von NMAKE eine Konfiguration angeben"
+    puts $cid "!MESSAGE Sie kï¿½nnen beim Ausfï¿½hren von NMAKE eine Konfiguration angeben"
     puts $cid "!MESSAGE durch Definieren des Makros CFG in der Befehlszeile. Zum Beispiel:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\" CFG=\"$name - Win32 Debug\""
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Für die Konfiguration stehen zur Auswahl:"
+    puts $cid "!MESSAGE Fï¿½r die Konfiguration stehen zur Auswahl:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE \"$name - Win32 Release\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
     puts $cid "!MESSAGE \"$name - Win32 Debug\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
@@ -218,7 +218,7 @@ proc gen_package_dsp {name} {
             puts $cid ""
             puts $cid "# ADD CPP $more_syms"
             puts $cid ""
-            puts $cid "!ENDIF" 
+            puts $cid "!ENDIF"
             puts $cid ""
             puts $cid "# End Source File"
         }
@@ -229,7 +229,7 @@ proc gen_package_dsp {name} {
             puts $cid ""
             puts $cid "SOURCE=..\\inc\\[lindex $mod($m,hdrs) $j]"
             puts $cid "# End Source File"
-        }            
+        }
 
         if {$mod($m,version) != ""} {
             # add version source file
@@ -275,13 +275,13 @@ proc gen_package_dsp {name} {
     # End Of File
     puts $cid "# End Target"
     puts $cid "# End Project"
-    
+
     close $cid
 }
 
 #--------------------------------------------------------------------
 #   gen_dll_dsp
-#   Generate dsp file for a dll target definition. 
+#   Generate dsp file for a dll target definition.
 #   07-Mar-00   floh    created
 #--------------------------------------------------------------------
 proc gen_dll_dsp {name} {
@@ -315,17 +315,17 @@ proc gen_dll_dsp {name} {
     puts $cid "# TARGTYPE \"Win32 (x86) Dynamic-Link Library\" 0x0102"
     puts $cid ""
     puts $cid "CFG=$name - Win32 Debug"
-    puts $cid "!MESSAGE Dies ist kein gültiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
-    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und führen Sie den Befehl"
-    puts $cid "!MESSAGE" 
+    puts $cid "!MESSAGE Dies ist kein gï¿½ltiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
+    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und fï¿½hren Sie den Befehl"
+    puts $cid "!MESSAGE"
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\"."
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Sie können beim Ausführen von NMAKE eine Konfiguration angeben"
+    puts $cid "!MESSAGE Sie kï¿½nnen beim Ausfï¿½hren von NMAKE eine Konfiguration angeben"
     puts $cid "!MESSAGE durch Definieren des Makros CFG in der Befehlszeile. Zum Beispiel:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\" CFG=\"$name - Win32 Debug\""
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Für die Konfiguration stehen zur Auswahl:"
+    puts $cid "!MESSAGE Fï¿½r die Konfiguration stehen zur Auswahl:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE \"$name - Win32 Release\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
     puts $cid "!MESSAGE \"$name - Win32 Debug\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
@@ -401,7 +401,7 @@ proc gen_dll_dsp {name} {
     puts $cid ""
     puts $cid "# PROP Default_Filter \"cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;cc\""
     for {set k 0} {$k < [llength $tar($i,mods)]} {incr k} {
-        set m [findmodbyname [lindex $tar($i,mods) $k]]        
+        set m [findmodbyname [lindex $tar($i,mods) $k]]
         # add regular sources
         for {set j 0} {$j < [llength $mod($m,srcs)]} {incr j} {
             puts $cid "# Begin Source File"
@@ -415,7 +415,7 @@ proc gen_dll_dsp {name} {
             puts $cid ""
             puts $cid "SOURCE=..\\inc\\[lindex $mod($m,hdrs) $j]"
             puts $cid "# End Source File"
-        }            
+        }
         if {$mod($m,version) != ""} {
             # add version source file
             puts $cid "# Begin Source File"
@@ -449,13 +449,13 @@ proc gen_dll_dsp {name} {
     # End Of File
     puts $cid "# End Target"
     puts $cid "# End Project"
-    
+
     close $cid
 }
 
 #--------------------------------------------------------------------
 #   gen_mll_dsp
-#   Generate dsp file for a mll target definition. 
+#   Generate dsp file for a mll target definition.
 #   07-Nov-00   floh    created
 #--------------------------------------------------------------------
 proc gen_mll_dsp {name} {
@@ -489,17 +489,17 @@ proc gen_mll_dsp {name} {
     puts $cid "# TARGTYPE \"Win32 (x86) Dynamic-Link Library\" 0x0102"
     puts $cid ""
     puts $cid "CFG=$name - Win32 Debug"
-    puts $cid "!MESSAGE Dies ist kein gültiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
-    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und führen Sie den Befehl"
-    puts $cid "!MESSAGE" 
+    puts $cid "!MESSAGE Dies ist kein gï¿½ltiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
+    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und fï¿½hren Sie den Befehl"
+    puts $cid "!MESSAGE"
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\"."
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Sie können beim Ausführen von NMAKE eine Konfiguration angeben"
+    puts $cid "!MESSAGE Sie kï¿½nnen beim Ausfï¿½hren von NMAKE eine Konfiguration angeben"
     puts $cid "!MESSAGE durch Definieren des Makros CFG in der Befehlszeile. Zum Beispiel:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\" CFG=\"$name - Win32 Debug\""
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Für die Konfiguration stehen zur Auswahl:"
+    puts $cid "!MESSAGE Fï¿½r die Konfiguration stehen zur Auswahl:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE \"$name - Win32 Release\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
     puts $cid "!MESSAGE \"$name - Win32 Debug\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
@@ -575,7 +575,7 @@ proc gen_mll_dsp {name} {
     puts $cid ""
     puts $cid "# PROP Default_Filter \"cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;cc\""
     for {set k 0} {$k < [llength $tar($i,mods)]} {incr k} {
-        set m [findmodbyname [lindex $tar($i,mods) $k]]        
+        set m [findmodbyname [lindex $tar($i,mods) $k]]
         # add regular sources
         for {set j 0} {$j < [llength $mod($m,srcs)]} {incr j} {
             puts $cid "# Begin Source File"
@@ -589,7 +589,7 @@ proc gen_mll_dsp {name} {
             puts $cid ""
             puts $cid "SOURCE=..\\inc\\[lindex $mod($m,hdrs) $j]"
             puts $cid "# End Source File"
-        }            
+        }
     }
     puts $cid "# End Group"
 
@@ -616,13 +616,13 @@ proc gen_mll_dsp {name} {
     # End Of File
     puts $cid "# End Target"
     puts $cid "# End Project"
-    
+
     close $cid
 }
 
 #--------------------------------------------------------------------
 #   gen_exe_dsp
-#   Generate dsp file for an executable target definition. 
+#   Generate dsp file for an executable target definition.
 #   08-Mar-00   floh    created
 #--------------------------------------------------------------------
 proc gen_exe_dsp {name} {
@@ -656,17 +656,17 @@ proc gen_exe_dsp {name} {
     puts $cid "# TARGTYPE \"Win32 (x86) Application\" 0x0101"
     puts $cid ""
     puts $cid "CFG=$name - Win32 Debug"
-    puts $cid "!MESSAGE Dies ist kein gültiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
-    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und führen Sie den Befehl"
-    puts $cid "!MESSAGE" 
+    puts $cid "!MESSAGE Dies ist kein gï¿½ltiges Makefile. Zum Erstellen dieses Projekts mit NMAKE"
+    puts $cid "!MESSAGE verwenden Sie den Befehl \"Makefile exportieren\" und fï¿½hren Sie den Befehl"
+    puts $cid "!MESSAGE"
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\"."
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Sie können beim Ausführen von NMAKE eine Konfiguration angeben"
+    puts $cid "!MESSAGE Sie kï¿½nnen beim Ausfï¿½hren von NMAKE eine Konfiguration angeben"
     puts $cid "!MESSAGE durch Definieren des Makros CFG in der Befehlszeile. Zum Beispiel:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE NMAKE /f \"$name.mak\" CFG=\"$name - Win32 Debug\""
     puts $cid "!MESSAGE "
-    puts $cid "!MESSAGE Für die Konfiguration stehen zur Auswahl:"
+    puts $cid "!MESSAGE Fï¿½r die Konfiguration stehen zur Auswahl:"
     puts $cid "!MESSAGE "
     puts $cid "!MESSAGE \"$name - Win32 Release\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
     puts $cid "!MESSAGE \"$name - Win32 Debug\" (basierend auf  \"Win32 (x86) Dynamic-Link Library\")"
@@ -742,7 +742,7 @@ proc gen_exe_dsp {name} {
     puts $cid ""
     puts $cid "# PROP Default_Filter \"cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;cc\""
     for {set k 0} {$k < [llength $tar($i,mods)]} {incr k} {
-        set m [findmodbyname [lindex $tar($i,mods) $k]]        
+        set m [findmodbyname [lindex $tar($i,mods) $k]]
         # add regular sources
         for {set j 0} {$j < [llength $mod($m,srcs)]} {incr j} {
             puts $cid "# Begin Source File"
@@ -756,7 +756,7 @@ proc gen_exe_dsp {name} {
             puts $cid ""
             puts $cid "SOURCE=..\\inc\\[lindex $mod($m,hdrs) $j]"
             puts $cid "# End Source File"
-        }            
+        }
     }
     puts $cid "# End Group"
 
@@ -783,7 +783,7 @@ proc gen_exe_dsp {name} {
     # End Of File
     puts $cid "# End Target"
     puts $cid "# End Project"
-    
+
     close $cid
 }
 
@@ -828,7 +828,7 @@ proc gen_workspace {name list_of_targets} {
     set cid [open $nomads_home/code/vstudio/$name.dsw w]
 
     puts $cid "Microsoft Developer Studio Workspace File, Format Version 6.00"
-    puts $cid "# WARNUNG: DIESE ARBEITSBEREICHSDATEI DARF NICHT BEARBEITET ODER GELÖSCHT WERDEN!"
+    puts $cid "# WARNUNG: DIESE ARBEITSBEREICHSDATEI DARF NICHT BEARBEITET ODER GELï¿½SCHT WERDEN!"
     puts $cid ""
 
     for {set i 0} {$i < [llength $list_of_targets]} {incr i} {

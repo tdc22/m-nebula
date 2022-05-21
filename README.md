@@ -1,6 +1,8 @@
 # Nebula Device
-This is an attempt of getting the nebula device engine to compile and run on modern systems. The engine was used for the Project Nomads (2002).
-The original, unchanged code can be found at: <https://github.com/dgiunchi/m-nebula>
+This is an attempt of getting the nebula device engine to compile and run on modern systems. The engine was used for the Project Nomads (2002).  
+The original, unchanged code can be found at: <https://github.com/dgiunchi/m-nebula>  
+  
+**This project is WIP and does not compile yet.**
 
 ## Build Instructions
 Prerequisites:

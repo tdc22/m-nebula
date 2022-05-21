@@ -6,7 +6,7 @@ The original, unchanged code can be found at: <https://github.com/dgiunchi/m-neb
 
 ## Build Instructions
 Prerequisites:
-* GCC 4.3 <https://aur.archlinux.org/packages/gcc43>
+* GCC 3.3 <https://askubuntu.com/questions/923337/installing-an-older-gcc-version3-4-3-on-ubuntu-14-04-currently-4-8-installed>
 * Tclsh, Tcllib
 
 Clone and Build:
